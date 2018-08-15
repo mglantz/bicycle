@@ -1,5 +1,5 @@
 # bicycle, version 0.1
-This is a simple Ansible based service to provide operations capabilities such as provisioning, life cycle management and troubleshooting for Red Hat Enterprise Linux. For people who do not need a satellite, but who needs a bicycle. Ment to be used with Ansible Tower and Red Hat Insights but can be used without that. Bicycle does not do subscription management, see the chapter about subscription manager.
+This is a simple Ansible based service to provide operations capabilities such as provisioning, life cycle management and troubleshooting for Red Hat Enterprise Linux. For people who do not need a satellite, but who needs a bicycle. Ment to be used with Ansible Tower, Red Hat Insights and Red Hat Network subscription manager, but can be used without that.
 
 # Contribution
 Feel free to contribute if you think this is useful :)
@@ -80,7 +80,7 @@ ansible-playbook -i ./bicycle-inventory kickstart.yml --private-key=/path/to/pri
 Use Ansible: http://www.ansible.com, https://www.ansible.com/products/tower or https://github.com/ansible/awx
 
 # Subscription management
-Bicycle does not handle subscription management for Red Hat products, you need to subscribe your system to Red Hat Network to get that. When registering your system, don't forget to disable any repositories enabled on Red Hat Network afterwards. Eg:
+You get subscription management via Red Hat Network. When registering your system, don't forget to disable any repositories enabled on Red Hat Network afterwards. Eg:
 ```
 subscription-manager register
 subscription-manager repos --disable=*

@@ -1,0 +1,2 @@
+[bicycle]
+18.184.6.150 ansible_python_interpreter=python ansible_ssh_user=root

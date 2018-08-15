@@ -1,0 +1,16 @@
+# Play to sync repositories from RHN
+- hosts: all
+  connection: local
+  gather_facts: False
+
+#  - name: Enable rhel-7-server repositories
+#    rhsm_repository:
+#      name: "{{ repo }}"
+#      state: enabled
+   
+  - name: Run reposync for repository
+    shell: reposync --gpgcheck -l --repoid="{{ repo }}" --download_path=/var/www/html --downloadcomps --download-metadata
+
+  - name: Create repository for rhel-7-server-rpms
+    shell: createrepo -v /var/www/html/{{ repo }}/ -g /var/www/html/{{ repo }}/comps.xml
+    

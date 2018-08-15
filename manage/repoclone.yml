@@ -1,0 +1,9 @@
+# Play to clone already synchronized repos, or to sync two local repos 
+# Usage: ansible-playbook -i /path/to/bicycle-inventory ./repoclone.yml --extra-vars "from_repo=rhel-7-server-rpms to_repo=standard-rhel7-180812"
+
+- hosts: all
+  - name: Synchronizing repository
+    synchronize:
+      src: /var/www/html/{{ from_repo }}
+      dst: /var/www/html/{{ to_repo }}
+

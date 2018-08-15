@@ -1,0 +1,10 @@
+# Play to create or update a kickstart file
+# 1) Create kickstart template file
+# 2) ansible-playbook -i /path/to/bicycle-inventory ./kickstart.yml --extra-vars "ks_name=rhel7-ks ks_template=rhel7-template"
+          
+- hosts: all
+  - name: Create or update kickstart
+    template:
+      src: templates/{{ ks_template }}
+      dst: /var/www/html/ks/{{ ks_name }}
+

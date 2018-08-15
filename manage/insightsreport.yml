@@ -1,4 +1,5 @@
-# Run Red Hat Insight report on servers
+# Run Red Hat Insight report on servers. Requires registration to Red Hat Network using subscription-manager register.
+# Usage: ansible-playbook -i ./server-inventory ./insightsreport.yml
 - hosts: all
 
   - name: Ensure Insights RPM is installed

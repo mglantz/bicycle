@@ -27,6 +27,7 @@ ansible-playbook -i ./provisioning-inventory ./provisioning.yml --private-key=/p
 # systemctl start httpd
 # git clone http://github.com/mglantz/bicycle
 ```
+* Open firewalls to Bicycle on port 80 and from Bicycle on port 22 if you want to use it as an Ansible bastion host.
 
 ## Getting advanced capabilities (GUI & Errata management)
 * If you want a supported GUI for Bicycle, install Ansible Tower (https://docs.ansible.com/ansible-tower/latest/html/quickinstall/index.html) or AWX (https://github.com/ansible/awx).

@@ -1,0 +1,64 @@
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  vars:
+    security_group: roadshowsecurity
+    region: eu-central-1
+    ami_id: ami-194cdc76
+    ec2_access_key: my ec2 access key
+    ec2_secret_key: my ec2 secret key
+  tasks:
+  - name: Download prerequisites script which will be run on Bicycle server on boot
+    get_url:
+      url: https://raw.githubusercontent.com/mglantz/bicycle/master/content/prerequisites.sh
+      dest: /tmp/prerequisites.sh
+
+  - name: Ensure a security group with correct ingress/egress rules are in place
+    ec2_group:
+      name: "{{ security_group }}"
+      description: Security Group for Bicycle server
+      region: "{{ region }}"
+      aws_access_key: "{{ec2_access_key}}"
+      aws_secret_key: "{{ec2_secret_key}}"
+      rules:
+        - proto: tcp
+          from_port: 22
+          to_port: 22
+          cidr_ip: 0.0.0.0/0
+        - proto: tcp
+          from_port: 80
+          to_port: 80
+          cidr_ip: 0.0.0.0/0
+        - proto: tcp
+          from_port: 443
+          to_port: 443
+          cidr_ip: 0.0.0.0/0
+      rules_egress:
+        - proto: all
+          cidr_ip: 0.0.0.0/0
+
+  - name: Provision Bicycle server
+    ec2:
+      aws_access_key: "{{ec2_access_key}}"
+      aws_secret_key: "{{ec2_secret_key}}"
+      key_name: redhat-roadshow
+      region: "{{ region }}"
+      group: "{{ security_group }}"
+      instance_type: t2.large
+      image: "{{ ami_id }}"
+      user_data: "{{ lookup('file', '/tmp//tmp/prerequisites.sh') }}"
+      wait: true
+      exact_count: 1
+      count_tag:
+        identity: tower
+      instance_tags:
+        identity: tower
+    register: ec2large
+
+  - name: Add Bicycle instance public IPs to host group
+    add_host: hostname={{ item.public_ip }} groups=ec2large
+    with_items: "{{ ec2large.tagged_instances }}"
+
+  - name: Print IP address of Bicycle server
+    debug:
+      msg: "{{ groups['ec2large'] }}"

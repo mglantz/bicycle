@@ -1,0 +1,31 @@
+# Please see https://access.redhat.com/labs/kickstartconfig/ for help to create a kickstart file
+lang en_US
+keyboard us
+timezone America/New_York
+reboot
+text
+url --url=http://bicycle/rhel7-ks-tree
+bootloader --location=mbr --append="rhgb quiet crashkernel=auto"
+zerombr
+clearpart --all --initlabel
+autopart
+auth --passalgo=sha512 --useshadow
+selinux --enforcing
+firewall --enabled --ssh
+skipx
+firstboot --disable
+
+%packages
+@base
+%end
+
+%pre
+#!/bin/bash
+echo "This happens before formating and package install"
+
+%end
+
+%post
+#!/bin/bash
+echo "This happens after server has been installed."
+%end

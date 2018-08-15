@@ -1,0 +1,20 @@
+# Run Red Hat Insight report on servers
+- hosts: all
+
+  - name: Ensure Insights RPM is installed
+    yum:
+      name: insights-client
+      state: present
+
+  - name: Check Insights status
+    shell: insights-client --status
+    register: insightstatus
+
+  - name: Register Insights client and run insights report
+    shell: insights-client --register
+    when: insightstatus.stdout.find('System is registered') == -1
+
+  - name: Run Insights report
+    shell: insights-client
+    when: insightstatus.stdout.find('System is registered') != -1 
+    

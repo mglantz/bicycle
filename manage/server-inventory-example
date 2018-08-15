@@ -1,0 +1,11 @@
+[dev]
+server1
+server2
+
+[test]
+server3
+server4
+
+[prod]
+server5
+server6

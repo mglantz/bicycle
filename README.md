@@ -77,7 +77,7 @@ ansible-playbook -i ./bicycle-inventory kickstart.yml --private-key=/path/to/pri
 ```
 
 ## Run arbitrary remote commands on servers
-Use Ansible: http://www.ansible.com, https://www.ansible.com/products/tower or https://github.com/ansible/awx
+Use Ansible: http://www.ansible.com and run playbooks from the Bicycle server.
 
 # Subscription management
 You get subscription management via Red Hat Network. When registering your system, don't forget to disable any repositories enabled on Red Hat Network afterwards. Eg:

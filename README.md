@@ -1,5 +1,5 @@
 # bicycle
-What is this? It's not a Satellite, but you don't need a Satellite.
+What is this? It's not a Satellite, but you don't need a Satellite. It's a simple Ansible based service to provide yum repositories and kickstarts.
 
 # Installing Bicycle
 ```
@@ -10,9 +10,9 @@ ansible-playbook -i ./provisioning-inventory ./provisioning.yml --private-key=/p
 ```
 
 # Managing Bicycle
-Before starting to operate your Bicycle, update manage/bicycle-inventory with the correct IP address.
+Before starting to operate your Bicycle, update manage/bicycle-inventory with the correct IP address to your Bicycle.
 
-## Synchrone a yum repository from the network
+## Synchrone a yum repository to your Bicycle
 Below playbook will synchronize a yum repository from the network/internet to /var/www/html/repo-id. The repository will become available via http://bicycle/repo-id.
 ```
 cd bicycle/manage

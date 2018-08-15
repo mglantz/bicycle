@@ -37,8 +37,12 @@ ansible-playbook -i ./provisioning-inventory ./provisioning.yml --private-key=/p
 # Managing Bicycle from the GUI
 This is if you are running Ansible Tower or AWX. Just import the playbooks into an Ansible Tower or AWX project and create job templates for the playbooks. Automation and instructions for this will come later. For now, look for details in the command line section below.
 
-## Managing errata and troubleshooting
-Red Hat Insight will provide you with information about what server needs to be updated and also generate Ansible playbooks to apply required errata. Integrate Ansible Tower or AWX with Red Hat Insights: https://docs.ansible.com/ansible-tower/latest/html/userguide/insights.html
+## Managing subscriptions, errata and predictive troubleshooting
+Red Hat Insight will provide you with information about what server needs to be updated and also generate Ansible playbooks to apply required errata. Integrate Ansible Tower or AWX with Red Hat Insights: https://docs.ansible.com/ansible-tower/latest/html/userguide/insights.html. To run Red Hat Insight you also need to register your servers to Red Hat Network. Do this with the commands below. Please note that we disable any yum repos enabled via Red Hat Network, as we like that to go via Bicycle:
+```
+subscription-manager register
+subscription-manager repos --disable=*
+```
 
 ## Run arbitrary remote commands on servers
 Use Ansible: http://www.ansible.com and https://www.ansible.com/products/tower or https://github.com/ansible/awx

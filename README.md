@@ -1,5 +1,5 @@
 # bicycle, version 0.1
-This is a simple Ansible based service to provide operations capabilities such as provisioning, life cycle management and troubleshooting for Red Hat Enterprise Linux. For people who do not need a satellite, but who needs a bicycle. Ment to be used with Ansible Tower, Red Hat Insights and Red Hat Network subscription manager, but can be used without that.
+This is a simple Ansible based service to provide operations capabilities such as provisioning, life cycle management and troubleshooting for Red Hat Enterprise Linux. For people who do not need a satellite, but who needs a bicycle. Ment to be used with Ansible Tower, Red Hat Insights and Red Hat Network subscription service, but can be used standalone.
 
 # Contribution
 Feel free to contribute if you think this is useful :)

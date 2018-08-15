@@ -1,4 +1,4 @@
-# bicycle
+# bicycle, version 0.1
 What is this? It's not a Satellite, but you don't need a Satellite. 
 
 This is a simple Ansible based service to provide operations capabilities such as provisioning, life cycle management and troubleshooting for Red Hat Enterprise Linux. Ment to be used with Ansible Tower and Red Hat Insights but can be used without that.

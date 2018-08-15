@@ -12,7 +12,7 @@ ansible-playbook -i ./provisioning-inventory ./provisioning.yml --private-key=/p
 # Managing Bicycle
 Before starting to operate your Bicycle, update manage/bicycle-inventory with the correct IP address to your Bicycle.
 
-## Synchrone a yum repository to your Bicycle
+## Synchronize a yum repository to your Bicycle
 Below playbook will synchronize a yum repository from the network/internet to /var/www/html/repo-id. The repository will become available via http://bicycle/repo-id.
 ```
 cd bicycle/manage
@@ -29,7 +29,7 @@ ansible-playbook -i ./bicycle-inventory repoclone.yml --private-key=/path/to/pri
 ```
 
 ## Create or update a kickstart
-To create or update a kickstart file, use this playbook. Created kickstart files will be made available via http://bicycle/kickstart-name.
+To create or update a kickstart file, use this playbook. Created kickstart files will be made available via http://bicycle/kickstart-name. For help on creating a kickstart file, please visit https://access.redhat.com/labs/kickstartconfig/
 ```
 cd bicycle/manage
 cp templates/kickstart-example.j2 templates/my-kickstart.j2

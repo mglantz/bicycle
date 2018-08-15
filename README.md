@@ -38,3 +38,6 @@ ansible-playbook -i ./bicycle-inventory kickstart.yml --private-key=/path/to/pri
 --extra-vars "ks-name=filename ks-template=filename.j2"
 ```
 
+## Run arbitrary remote commands on servers
+Use Ansible: http://www.ansible.com
+

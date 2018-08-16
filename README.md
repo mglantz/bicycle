@@ -57,6 +57,12 @@ cd bicycle/manage
 ansible-playbook -i ./bicycle-inventory reposync.yml --private-key=/path/to/private.pem -u root \
 --extra-vars "repo=repository-id"
 ```
+Example:
+```
+cd bicycle/manage
+ansible-playbook -i ./bicycle-inventory reposync.yml --private-key=/home/user/.ssh/id_rsa -u root \
+--extra-vars "repo=rhel-7-server-rpms"
+```
 
 ## Clone yum repository
 To copy an an already synced yum repository or to synchronize any two yum repositories from A to B, use this playbook. The new repository becomes available via http://bicycle/repos/repo-id. The cloning process will delete any files in to_repo which does not exist in from_repo to prevent inconsistent states.
@@ -64,6 +70,12 @@ To copy an an already synced yum repository or to synchronize any two yum reposi
 cd bicycle/manage
 ansible-playbook -i ./bicycle-inventory repoclone.yml --private-key=/path/to/private.pem -u root \
 --extra-vars "from_repo=repository-id to_repo=repository-id"
+```
+Example:
+```
+cd bicycle/manage
+ansible-playbook -i ./bicycle-inventory repoclone.yml --private-key=/home/user/.ssh/id_rsa -u root \
+--extra-vars "from_repo=rhel-7-server-rpms to_repo=rhel7-baseline-180120"
 ```
 
 ## Create or update a kickstart
@@ -85,4 +97,4 @@ You get subscription management via Red Hat Network. When registering your syste
 subscription-manager register
 subscription-manager repos --disable=*
 ```
-
+For more details on registering a Red Hat system, please see: https://access.redhat.com/solutions/253273

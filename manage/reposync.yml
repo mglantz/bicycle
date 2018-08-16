@@ -7,10 +7,16 @@
 #    rhsm_repository:
 #      name: "{{ repo }}"
 #      state: enabled
-   
+
+  - name: Ensure repo directory exists
+    file:
+      path: /var/www/html/repos
+      state: directory
+      recurse: yes
+
   - name: Run reposync for repository
-    shell: reposync --gpgcheck -l --repoid="{{ repo }}" --download_path=/var/www/html --downloadcomps --download-metadata
+    shell: reposync --gpgcheck -l --repoid="{{ repo }}" --download_path=/var/www/html/repos --downloadcomps --download-metadata
 
   - name: Create repository for rhel-7-server-rpms
-    shell: createrepo -v /var/www/html/{{ repo }}/ -g /var/www/html/{{ repo }}/comps.xml
+    shell: createrepo -v /var/www/html/repos/{{ repo }}/ -g /var/www/html/repos/{{ repo }}/comps.xml
     

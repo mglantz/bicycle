@@ -1,13 +1,14 @@
 # bicycle, version 0.1
-Bicycle is more a concept than a thing. Bicycle is an Ansible based concept to provide operations capabilities such as provisioning, life cycle management and troubleshooting for Red Hat Enterprise Linux. For people who only needs a bicycle and not a satellite. Ment to be used with Ansible Tower, Red Hat Insights and Red Hat Network subscription service but can be used standalone only using the software which is included in Red Hat Enterprise Linux. As all software is provided by Red Hat that means you get support for the software from Red Hat Support, but you do NOT get Bicycle specific support ;)
+Bicycle is more a concept than a thing. Bicycle is an Ansible based concept to provide operations capabilities such as provisioning, life cycle management and troubleshooting for Red Hat Enterprise Linux. For people who only needs a bicycle and not a satellite. Ment to be used with Ansible Tower, Red Hat Insights and Red Hat Network subscription service but can be used standalone only using the software which is included in Red Hat Enterprise Linux. As all software can provided by Red Hat as a part of a Red Hat Enterprise Linux subscription - that means you get support for the software from Red Hat Support, but remember you do _NOT_ get Bicycle specific support ;)
 
 # Contribution
 Feel free to contribute if you think this is useful :)
 
-# Bicycle architectures
+# Bicycle architecture
 Bicycle can run without buying anything extra, CLI only, by only using Ansible core included in Red Hat Enterprise Linux and using Red Hat Network for keeping tabs on subscription. Bicycle can also run with GUI and LCM features, then utilizing Ansible Tower or AWX for GUI and advanced life cycle management capabilities provided by Red Hat Insight.
 
 The full set of features which the Bicycle concept provides are:
+* GUI, CLI and RestAPI where all provided and custom automation can be accessed and shared (Ansible Tower or AWX)
 * Sync yum repositories to a local server and provide them via http (reposync and createrepo)
 * Clone yum repositories to provide your own baselines (rsync, recommended: to VDO enabled disk)
 * Provide kickstarts from a local server via http

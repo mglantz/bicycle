@@ -1,9 +1,15 @@
 # Play to clone already synchronized repos, or to sync two local repos 
-# Usage: ansible-playbook -i /path/to/bicycle-inventory ./repoclone.yml --extra-vars "from_repo=rhel-7-server-rpms to_repo=standard-rhel7-180812"
+# Usage: ansible-playbook -i /path/to/bicycle-inventory ./repoclone.yml --extra-vars "bicycle=bicycle-ip from_repo=rhel-7-server-rpms to_repo=rhel7-180812"
 
 - hosts: all
-  - name: Synchronizing repository
-    synchronize:
-      src: /var/www/html/{{ from_repo }}
-      dst: /var/www/html/{{ to_repo }}
+  gather_facts: no
+  tasks:
 
+  - name: Ensure directory of destination repo exists
+    file:
+      path: /var/www/html/{{ to_repo }}
+      state: directory
+
+  - name: Synchronizing repository directory
+    shell: /usr/bin/rsync --delay-updates -F --compress --delete-after --archive /var/www/html/{{ from_repo }}/ /var/www/html/{{ to_repo }}
+    

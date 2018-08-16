@@ -3,10 +3,15 @@
 # 2) ansible-playbook -i /path/to/bicycle-inventory ./kickstart.yml --extra-vars "ks_name=rhel7-ks ks_template=rhel7-template"
           
 - hosts: all
-  gather_facts: False
   tasks:
+  - name: Ensure kickstart directory has been created
+    file:
+      path: /var/www/html/ks
+      state: directory
+      recurse: yes
+
   - name: Create or update kickstart
     template:
       src: templates/{{ ks_template }}
-      dst: /var/www/html/ks/{{ ks_name }}
-
+      dest: /var/www/html/ks/{{ ks_name }}
+      

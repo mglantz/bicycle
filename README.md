@@ -59,7 +59,7 @@ ansible-playbook -i ./bicycle-inventory reposync.yml --private-key=/path/to/priv
 ```
 
 ## Clone yum repository
-To copy an an already synced yum repository or to synchronize any two yum repositories from A to B, use this playbook.
+To copy an an already synced yum repository or to synchronize any two yum repositories from A to B, use this playbook. The new repository becomes available via http://bicycle/repo-id. The cloning process will delete any files in to_repo which does not exist in from_repo to prevent inconsistent states.
 ```
 cd bicycle/manage
 ansible-playbook -i ./bicycle-inventory repoclone.yml --private-key=/path/to/private.pem -u root \

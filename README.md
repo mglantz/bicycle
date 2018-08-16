@@ -36,10 +36,12 @@ Review what architectural option to select first.
 * 1x Red Hat Enterprise Linux subscription
 * 1x server, virtual or physical (2 CPU cores, 8 GB of memory is estimated for ~100 managed servers)
 * Firewall openings as follows:
-** Network -> Bicycle server, tcp port 80.
-** Bicycle server -> Managed servers, tcp port 22
-** Bicycle server -> Red Hat Network (see: https://access.redhat.com/solutions/65300)
-** Managed servers -> Red Hat Network (see: https://access.redhat.com/solutions/65300)
+```
+Network -> Bicycle server, tcp port 80.
+Bicycle server -> Managed servers, tcp port 22
+Bicycle server -> Red Hat Network (see: https://access.redhat.com/solutions/65300)
+Managed servers -> Red Hat Network (see: https://access.redhat.com/solutions/65300)
+```
 
 ## Bicycle GUI and LCM option prerequsites
 * 1x Red Hat Enterprise Linux subscription with Smart Management (this gives you Red Hat Insight)
@@ -47,11 +49,14 @@ Review what architectural option to select first.
 * 1x server, virtual or physical (2 CPU cores, 8 GB of memory is estimates for ~100 managed servers)
 * For Ansible Tower prerequisites see: https://docs.ansible.com/ansible-tower/latest/html/quickinstall/index.html
 * Firewall openings as follows:
-** Network -> Bicycle server, tcp port 80.
-** Ansible tower -> Bicycle server, tcp port 22
-** Bicycle server -> managed servers, tcp port 22
-** Bicycle server -> Red Hat Network (see: https://access.redhat.com/solutions/65300)
-** Managed servers -> Red Hat Network (see: https://access.redhat.com/solutions/65300)
+```
+Network -> Bicycle server, tcp port 80.
+Ansible tower -> Bicycle server, tcp port 22
+Bicycle server -> managed servers, tcp port 22
+Bicycle server -> Red Hat Network (see: https://access.redhat.com/solutions/65300)
+Managed servers -> Red Hat Network (see: https://access.redhat.com/solutions/65300)
+Managed servers -> Red Hat Insight (cert-api.access.redhat.com:443, api.access.redhat.com:443)
+```
 
 # Installing Bicycle
 The Bicycle is where you keep yum repositories and kickstart files. If you do not need a GUI or the ability to centrally see which server needs what updates a.s.o. - then you only need to install this.

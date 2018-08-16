@@ -45,7 +45,7 @@ subscription-manager repos --disable=*
 ```
 
 ## Run arbitrary remote commands on servers
-Use Ansible: http://www.ansible.com and https://www.ansible.com/products/tower or https://github.com/ansible/awx
+Use Ansible: http://www.ansible.com and https://www.ansible.com/products/tower or https://github.com/ansible/awx. Commands can be run from the command line like such: https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html#parallelism-and-shell-commands.
 
 # Managing Bicycle from a command line
 Before starting to operate your Bicycle, update manage/bicycle-inventory with the correct IP address to your Bicycle.
@@ -77,7 +77,7 @@ ansible-playbook -i ./bicycle-inventory kickstart.yml --private-key=/path/to/pri
 ```
 
 ## Run arbitrary remote commands on servers
-Use Ansible: http://www.ansible.com and run playbooks from the Bicycle server.
+Use Ansible: http://www.ansible.com and run playbooks from the Bicycle server, or directory from the command line, like such: https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html#parallelism-and-shell-commands
 
 # Subscription management
 You get subscription management via Red Hat Network. When registering your system, don't forget to disable any repositories enabled on Red Hat Network afterwards. Eg:

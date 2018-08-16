@@ -7,9 +7,10 @@
 
   - name: Ensure directory of destination repo exists
     file:
-      path: /var/www/html/{{ to_repo }}
+      path: /var/www/html/repos/{{ to_repo }}
       state: directory
+      recurse: yes
 
   - name: Synchronizing repository directory
-    shell: /usr/bin/rsync --delay-updates -F --compress --delete-after --archive /var/www/html/{{ from_repo }}/ /var/www/html/{{ to_repo }}
+    shell: /usr/bin/rsync --delay-updates -F --compress --delete-after --archive /var/www/html/repos/{{ from_repo }}/ /var/www/html/repos/{{ to_repo }}
     

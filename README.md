@@ -28,6 +28,30 @@ The full set of features which the Bicycle concept provides are:
 ## Bicycle GUI and LCM option
 
  ![Advanced architecture](https://github.com/mglantz/bicycle/blob/master/adv-architecture.png?raw=true)
+ 
+# Prerequisites
+Review what architectural option to select first.
+
+## Bicycle CLI option prerequsites
+* 1x Red Hat Enterprise Linux subscription
+* 1x server, virtual or physical (2 CPU cores, 8 GB of memory is estimated for ~100 managed servers)
+* Firewall openings as follows:
+** Network -> Bicycle server, tcp port 80.
+** Bicycle server -> Managed servers, tcp port 22
+** Bicycle server -> Red Hat Network (see: https://access.redhat.com/solutions/65300)
+** Managed servers -> Red Hat Network (see: https://access.redhat.com/solutions/65300)
+
+## Bicycle GUI and LCM option prerequsites
+* 1x Red Hat Enterprise Linux subscription with Smart Management (this gives you Red Hat Insight)
+* 1x Ansible Tower by Red Hat subscription
+* 1x server, virtual or physical (2 CPU cores, 8 GB of memory is estimates for ~100 managed servers)
+* For Ansible Tower prerequisites see: https://docs.ansible.com/ansible-tower/latest/html/quickinstall/index.html
+* Firewall openings as follows:
+** Network -> Bicycle server, tcp port 80.
+** Ansible tower -> Bicycle server, tcp port 22
+** Bicycle server -> managed servers, tcp port 22
+** Bicycle server -> Red Hat Network (see: https://access.redhat.com/solutions/65300)
+** Managed servers -> Red Hat Network (see: https://access.redhat.com/solutions/65300)
 
 # Installing Bicycle
 The Bicycle is where you keep yum repositories and kickstart files. If you do not need a GUI or the ability to centrally see which server needs what updates a.s.o. - then you only need to install this.
@@ -42,7 +66,7 @@ ansible-playbook -i ./provisioning-inventory ./provisioning.yml --private-key=/p
 ```
 
 ## Manual installation of the Bicycle server
-* Install Red Hat Enterprise Linux 7-latest on a server with appropriate specs (2 CPU cores, 8 GB of memory is OK for ~200 servers).
+* Install Red Hat Enterprise Linux 7-latest on a server with appropriate specs
 * Install and configure required software
 ```
 # yum install httpd httpd-tools createrepo yum-utils
@@ -52,7 +76,6 @@ ansible-playbook -i ./provisioning-inventory ./provisioning.yml --private-key=/p
 # systemctl start httpd
 # git clone http://github.com/mglantz/bicycle
 ```
-* Open firewalls to Bicycle on port 80 and from Bicycle on port 22 if you want to use it as an Ansible bastion host.
 
 ## Installing advanced capabilities (GUI & LCM management)
 * If you want a supported GUI for Bicycle, install Ansible Tower (https://docs.ansible.com/ansible-tower/latest/html/quickinstall/index.html) or AWX (https://github.com/ansible/awx).

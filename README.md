@@ -51,7 +51,7 @@ Use Ansible: http://www.ansible.com and https://www.ansible.com/products/tower o
 Before starting to operate your Bicycle, update manage/bicycle-inventory with the correct IP address to your Bicycle.
 
 ## Synchronize a yum repository to your Bicycle
-Below playbook will synchronize a yum repository from the network/internet to /var/www/html/repo-id. The repository will become available via http://bicycle/repo-id.
+Below playbook will synchronize a yum repository from the network/internet to /var/www/html/repos/repo-id on Bicycle. The repository will become available via http://bicycle/repos/repo-id. List all available repositories by going to http://bicycle/repos.
 ```
 cd bicycle/manage
 ansible-playbook -i ./bicycle-inventory reposync.yml --private-key=/path/to/private.pem -u root \
@@ -59,7 +59,7 @@ ansible-playbook -i ./bicycle-inventory reposync.yml --private-key=/path/to/priv
 ```
 
 ## Clone yum repository
-To copy an an already synced yum repository or to synchronize any two yum repositories from A to B, use this playbook. The new repository becomes available via http://bicycle/repo-id. The cloning process will delete any files in to_repo which does not exist in from_repo to prevent inconsistent states.
+To copy an an already synced yum repository or to synchronize any two yum repositories from A to B, use this playbook. The new repository becomes available via http://bicycle/repos/repo-id. The cloning process will delete any files in to_repo which does not exist in from_repo to prevent inconsistent states.
 ```
 cd bicycle/manage
 ansible-playbook -i ./bicycle-inventory repoclone.yml --private-key=/path/to/private.pem -u root \
@@ -67,13 +67,13 @@ ansible-playbook -i ./bicycle-inventory repoclone.yml --private-key=/path/to/pri
 ```
 
 ## Create or update a kickstart
-To create or update a kickstart file, use this playbook. Created kickstart files will be made available via http://bicycle/kickstart-name. For help on creating a kickstart file, please visit https://access.redhat.com/labs/kickstartconfig/
+To create or update a kickstart file, use this playbook. Created kickstart files will be made available via http://bicycle/ks/kickstart-name. For help on creating a kickstart file, please visit https://access.redhat.com/labs/kickstartconfig/. To list all available kickstarts visit http://bicycle/ks/
 ```
 cd bicycle/manage
 cp templates/kickstart-example.j2 templates/my-kickstart.j2
 vi templates/my-kickstart.j2
 ansible-playbook -i ./bicycle-inventory kickstart.yml --private-key=/path/to/private.pem -u root \
---extra-vars "ks-name=filename ks-template=filename.j2"
+--extra-vars "ks-name=kickstart-name ks-template=filename.j2"
 ```
 
 ## Run arbitrary remote commands on servers

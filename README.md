@@ -4,6 +4,17 @@ This is a simple Ansible based service to provide operations capabilities such a
 # Contribution
 Feel free to contribute if you think this is useful :)
 
+# Bicycle architectures
+Bicycle can run without GUI, only using Ansible core included in Red Hat Enterprise Linux and using Red Hat Network for keeping tabs on subscription. Bicycle can also run with GUI, then utilizing Ansible Tower or AWX for GUI and with advanced life cycle management capabilities provided by Red Hat Insight. This chapter provides an overview of these two options.
+
+## Bicycle CLI option
+
+ ![Simple architecture](https://github.com/mglantz/bicycle/blob/master/s-architecture.png?raw=true)
+
+## Bicycle GUI and LCM option
+
+ ![Advanced architecture](https://github.com/mglantz/bicycle/blob/master/adv-architecture.png?raw=true)
+
 # Installing Bicycle
 The Bicycle is where you keep yum repositories and kickstart files. If you do not need a GUI or the ability to centrally see which server needs what updates a.s.o. - then you only need to install this.
 
@@ -29,10 +40,10 @@ ansible-playbook -i ./provisioning-inventory ./provisioning.yml --private-key=/p
 ```
 * Open firewalls to Bicycle on port 80 and from Bicycle on port 22 if you want to use it as an Ansible bastion host.
 
-## Getting advanced capabilities (GUI & Errata management)
+## Getting advanced capabilities (GUI & LCM management)
 * If you want a supported GUI for Bicycle, install Ansible Tower (https://docs.ansible.com/ansible-tower/latest/html/quickinstall/index.html) or AWX (https://github.com/ansible/awx).
 
-* If you want advanced errata management where you can see which server is missing what update and much more, get Red Hat Insight ( https://access.redhat.com/products/red-hat-insights#getstarted ). 
+* If you want advanced Life Cycle Management where you can see which server is missing what update and much more, get Red Hat Insight ( https://access.redhat.com/products/red-hat-insights#getstarted ). 
 
 # Managing Bicycle from the GUI
 This is if you are running Ansible Tower or AWX. Just import the playbooks into an Ansible Tower or AWX project and create job templates for the playbooks. Automation and instructions for this will come later. For now, look for details in the command line section below.

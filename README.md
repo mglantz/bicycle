@@ -5,7 +5,16 @@ Bicycle is more a concept than a thing. Bicycle is an Ansible based concept to p
 Feel free to contribute if you think this is useful :)
 
 # Bicycle architectures
-Bicycle can run without GUI, only using Ansible core included in Red Hat Enterprise Linux and using Red Hat Network for keeping tabs on subscription. Bicycle can also run with GUI, then utilizing Ansible Tower or AWX for GUI and with advanced life cycle management capabilities provided by Red Hat Insight. This chapter provides an overview of these two options.
+Bicycle can run without buying anything extra, CLI only, by only using Ansible core included in Red Hat Enterprise Linux and using Red Hat Network for keeping tabs on subscription. Bicycle can also run with GUI and LCM features, then utilizing Ansible Tower or AWX for GUI and advanced life cycle management capabilities provided by Red Hat Insight.
+
+The full set of features which the Bicycle concept provides are:
+* Sync yum repositories to a local server and provide them via http (reposync and createrepo)
+* Clone yum repositories to provide your own baselines (rsync, recommended: to VDO enabled disk)
+* Provide kickstarts from a local server via http
+* Provision new servers on any platform, including Amazon, GCE, Azure, RHEV, OpenStack, Hyper-V, VMware, a.s.o. (Ansible)
+* Arbitrary remote commands to provisioned or existing servers (Ansible)
+* Advanced LCM features, including deep state errata reporting (if something is disabled, why patch?) and automatic production of Ansible playbooks to patch servers (Red Hat Insight)
+* Advanced proactive problem analysis based on over 100,000 known issues and solution. This saves you a lot of time. (Red Hat Insight)
 
 ## Bicycle CLI option
 
@@ -40,7 +49,7 @@ ansible-playbook -i ./provisioning-inventory ./provisioning.yml --private-key=/p
 ```
 * Open firewalls to Bicycle on port 80 and from Bicycle on port 22 if you want to use it as an Ansible bastion host.
 
-## Getting advanced capabilities (GUI & LCM management)
+## Installing advanced capabilities (GUI & LCM management)
 * If you want a supported GUI for Bicycle, install Ansible Tower (https://docs.ansible.com/ansible-tower/latest/html/quickinstall/index.html) or AWX (https://github.com/ansible/awx).
 
 * If you want advanced Life Cycle Management where you can see which server is missing what update and much more, get Red Hat Insight ( https://access.redhat.com/products/red-hat-insights#getstarted ). 

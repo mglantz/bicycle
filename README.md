@@ -1,5 +1,5 @@
 # bicycle, version 0.1
-Bicycle is more a concept than a thing. Bicycle is an Ansible based concept to provide operations capabilities such as provisioning, life cycle management and troubleshooting for Red Hat Enterprise Linux. For people who only needs a bicycle and not a satellite. 
+Bicycle is more a concept than a thing. Bicycle is an Ansible based concept to provide simple and robust operations capabilities such as provisioning, life cycle management and troubleshooting for Red Hat Enterprise Linux. For people who only needs a bicycle and not a satellite. 
 
 Bicycle is ment to be used with Ansible Tower, Red Hat Insights and Red Hat Network subscription service but can be used standalone only using the software which is included in Red Hat Enterprise Linux. As all software can provided by Red Hat as a part of a Red Hat Enterprise Linux subscription - that means you get support for the software from Red Hat Support, but remember you do _NOT_ get Bicycle specific support ;)
 

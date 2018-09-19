@@ -21,7 +21,7 @@ The full set of features which the Bicycle concept provides are:
 * Advanced LCM features, including deep state errata reporting (if something is disabled, why patch?) and automatic production of Ansible playbooks to patch servers (Red Hat Insight)
 * Advanced proactive problem analysis based on over 100,000 known issues and solution. This saves you a lot of time. (Red Hat Insight)
 
-## Bicycle CLI option
+## Bicycle CLI option aka Kickbike
 
  ![Simple architecture](https://github.com/mglantz/bicycle/blob/master/s-architecture.png?raw=true)
 

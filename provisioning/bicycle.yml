@@ -7,7 +7,7 @@
   tasks:
   - name: Download prerequisites script which will be run on Bicycle server on boot
     get_url:
-      url: https://raw.githubusercontent.com/mglantz/bicycle/master/provisioning/prerequisites.sh
+      url: https://raw.githubusercontent.com/mglantz/bicycle/master/provisioning/scripts/prerequisites.sh
       dest: /tmp/prerequisites.sh
 
   - name: Ensure a security group with correct ingress/egress rules are in place

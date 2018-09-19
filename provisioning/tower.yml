@@ -46,7 +46,7 @@
       image: "{{ ami_id }}"
       user_data: "{{ lookup('file', '/tmp/tower-prep.sh') }}"
       wait: true
-      exact_count: "{{ number_of_tower_systems }}"
+      exact_count: 1
       count_tag:
         identity: tower
       instance_tags:

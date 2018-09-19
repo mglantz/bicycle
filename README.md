@@ -74,12 +74,12 @@ ansible-playbook -i ./provisioning-inventory ./provisioning.yml --private-key=/p
 * Install Red Hat Enterprise Linux 7-latest on a server with appropriate specs
 * Install and configure required software
 ```
-# yum install httpd httpd-tools createrepo yum-utils
-# mkdir /var/www/html
-# chmod 755 /var/www/html
-# systemctl enable httpd
-# systemctl start httpd
-# git clone http://github.com/mglantz/bicycle
+yum install httpd httpd-tools createrepo yum-utils git
+mkdir /var/www/html
+chmod 755 /var/www/html
+systemctl enable httpd
+systemctl start httpd
+git clone http://github.com/mglantz/bicycle
 ```
 
 ## Installing advanced capabilities (GUI & LCM management)

@@ -9,6 +9,7 @@
     get_url:
       url: https://raw.githubusercontent.com/mglantz/bicycle/master/provisioning/scripts/prerequisites.sh
       dest: /tmp/prerequisites.sh
+      force: yes
 
   - name: Ensure a security group with correct ingress/egress rules are in place
     ec2_group:

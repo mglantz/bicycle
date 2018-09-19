@@ -3,6 +3,8 @@
   connection: local
   gather_facts: False
 
+  tasks:
+  
 #  - name: Enable rhel-7-server repositories
 #    rhsm_repository:
 #      name: "{{ repo }}"

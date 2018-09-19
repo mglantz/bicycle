@@ -6,7 +6,7 @@
   tasks:
   - name: Download Tower user data file
     get_url:
-      url: https://raw.githubusercontent.com/mglantz/bicycle/provisioning/tower-prep.sh
+      url: https://raw.githubusercontent.com/mglantz/bicycle/provisioning/scripts/tower-prep.sh
       dest: /tmp/tower-prep.sh
       validate_certs: no
       force: yes

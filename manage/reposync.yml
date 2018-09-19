@@ -13,10 +13,17 @@
       path: /var/www/html/repos
       state: directory
       recurse: yes
+      setype: httpd_sys_content_t
+      serole: object_r
+      seuser: system_u
+
 
   - name: Run reposync for repository
     shell: reposync --gpgcheck -l --repoid="{{ repo }}" --download_path=/var/www/html/repos --downloadcomps --download-metadata
 
   - name: Create repository for rhel-7-server-rpms
     shell: createrepo -v /var/www/html/repos/{{ repo }}/ -g /var/www/html/repos/{{ repo }}/comps.xml
+    
+  - name: ensure selinux file contexts
+    command: restorecon -R "/var/www/html/repos/{{ repo }}"
     

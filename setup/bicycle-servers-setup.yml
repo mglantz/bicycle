@@ -1,0 +1,11 @@
+- hosts: bicycle-servers
+  vars:
+    vdo_disk: sdb
+    vdo_disk_name: vdo1
+    vdo_logical_size: 200G
+    repo_directory: /var/www/html/repos
+  become: true
+
+  roles:
+     - bicycle-server
+

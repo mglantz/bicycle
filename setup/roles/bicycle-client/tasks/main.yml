@@ -1,0 +1,7 @@
+---
+  - name: setup repo files
+    get_url:
+      url: http://{{ bicycle_server }}/repos/{{ item }}.repo
+      dest: /etc/yum.repos.d/{{ item }}.repo
+    with_items:
+      - "{{ repos }}"

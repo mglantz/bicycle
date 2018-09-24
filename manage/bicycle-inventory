@@ -13,4 +13,4 @@ bicycle3.lab.home.adrians.computer ansible_host=10.10.10.123 ansible_user=root t
 
 [bicycle-clients]
 bicycle-client1.lab.home.adrians.computer ansible_user=root bicycle_server=bicycle1.lab.home.adrians.computer repos='["rhel-7-server-rpms", "rhel-7-server-extras-rpms"]'
-bicycle-client2.lab.home.adrians.computer ansible_user=root bicycle_server=bicycle1.lab.home.adrians.computer repos=rhel-7-server-rpms
+bicycle-client2.lab.home.adrians.computer ansible_user=root bicycle_server=bicycle3.lab.home.adrians.computer repos=rhel-7-server-rpms

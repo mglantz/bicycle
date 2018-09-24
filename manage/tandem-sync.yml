@@ -16,24 +16,20 @@
     when: tandem_master != ""
     register: repo_sync
 
-  - debug:
-       var: repo_sync
-    
   - name: get a list of repo files
     shell: find /var/www/html/repos -type f -name "*.repo" | xargs basename -a
     register: repos
     tags: get_repos
     when: tandem_master != "" and repo_sync.changed
 
-    #  - debug:
-    #  var: repos
-    #tags: get_repos
+#  - debug:
+#      var: repos
 
   - name: update .repo files
     template:
       src: templates/repository-item.repo.j2
       dest: "/var/www/html/repos/{{ item }}"
     with_items:
-    - "{{ repos.stdout_lines }}"
+      - "{{ repos.stdout_lines }}"
     when: tandem_master != "" and repo_sync.changed
     tags: repo

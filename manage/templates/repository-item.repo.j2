@@ -1,3 +1,4 @@
 [{{ item.split(".")[0] }}]
-name={{ item.split(".")[0] }}
-baseurl=http://{{ inventory_hostname }}/repos/{{ item.split(".")[0] }}
+name = {{ item.split(".")[0] }}
+baseurl = http://{{ inventory_hostname }}/repos/{{ item.split(".")[0] }}
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release

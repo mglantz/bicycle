@@ -4,13 +4,20 @@ bicycle2.lab.home.adrians.computer ansible_host=10.10.10.122 ansible_user=root
 bicycle3.lab.home.adrians.computer ansible_host=10.10.10.123 ansible_user=root
 
 
-[tandem-east]
+[tandem_east]
 bicycle1.lab.home.adrians.computer ansible_host=10.10.10.121 ansible_user=root tandem_master=""
 bicycle2.lab.home.adrians.computer ansible_host=10.10.10.122 ansible_user=root tandem_master=bicycle1.lab.home.adrians.computer
 
 [tandem-west]
 bicycle3.lab.home.adrians.computer ansible_host=10.10.10.123 ansible_user=root tandem_master=bicycle1.lab.home.adrians.computer
 
+[bicycle-clients:vars]
+repos='["rhel-7-server-rpms", "rhel-7-server-extras-rpms", "rhel-7-server-rh-common-rpms"]'
+tandem_group=tandem_east 
+mirror_list=false
+
 [bicycle-clients]
-bicycle-client1.lab.home.adrians.computer ansible_user=root bicycle_server=bicycle1.lab.home.adrians.computer repos='["rhel-7-server-rpms", "rhel-7-server-extras-rpms"]'
-bicycle-client2.lab.home.adrians.computer ansible_user=root bicycle_server=bicycle3.lab.home.adrians.computer repos=rhel-7-server-rpms
+bicycle-client1.lab.home.adrians.computer ansible_user=root bicycle_server=bicycle1.lab.home.adrians.computer 
+bicycle-client2.lab.home.adrians.computer ansible_user=root bicycle_server=bicycle3.lab.home.adrians.computer 
+#bicycle-client2.lab.home.adrians.computer ansible_user=root tandem_group=tandem_east 
+

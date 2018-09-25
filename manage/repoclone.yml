@@ -1,7 +1,7 @@
 # Play to clone already synchronized repos, or to sync two local repos 
 # Usage: ansible-playbook -i /path/to/bicycle-inventory ./repoclone.yml --extra-vars "bicycle=bicycle-ip from_repo=rhel-7-server-rpms to_repo=rhel7-180812"
 
-- hosts: bicycle-servers
+- hosts: bicycle_servers
   gather_facts: no
   tasks:
 

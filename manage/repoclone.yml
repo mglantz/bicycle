@@ -2,7 +2,7 @@
 # Usage: ansible-playbook -i /path/to/bicycle-inventory ./repoclone.yml --extra-vars "bicycle=bicycle-ip from_repo=rhel-7-server-rpms to_repo=rhel7-180812"
 
 - hosts: bicycle_servers
-  gather_facts: no
+  gather_facts: yes
   tasks:
 
   - name: Ensure directory of destination repo exists

@@ -1,5 +1,5 @@
 # Play to sync repositories from RHN
-- hosts: bicycle-servers
+- hosts: bicycle_servers
   #connection: local
   gather_facts: False
   become: true

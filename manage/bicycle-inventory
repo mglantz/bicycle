@@ -1,4 +1,4 @@
-[bicycle-servers]
+[bicycle_servers]
 bicycle1.lab.home.adrians.computer ansible_host=10.10.10.121 ansible_user=root
 bicycle2.lab.home.adrians.computer ansible_host=10.10.10.122 ansible_user=root
 bicycle3.lab.home.adrians.computer ansible_host=10.10.10.123 ansible_user=root
@@ -8,16 +8,28 @@ bicycle3.lab.home.adrians.computer ansible_host=10.10.10.123 ansible_user=root
 bicycle1.lab.home.adrians.computer ansible_host=10.10.10.121 ansible_user=root tandem_master=""
 bicycle2.lab.home.adrians.computer ansible_host=10.10.10.122 ansible_user=root tandem_master=bicycle1.lab.home.adrians.computer
 
-[tandem-west]
+[tandem_west]
 bicycle3.lab.home.adrians.computer ansible_host=10.10.10.123 ansible_user=root tandem_master=bicycle1.lab.home.adrians.computer
 
-[bicycle-clients:vars]
+[bicycle_clients:children]
+bicycle_clients_east
+bicycle_clients_west
+
+[bicycle_clients:vars]
 repos='["rhel-7-server-rpms", "rhel-7-server-extras-rpms", "rhel-7-server-rh-common-rpms"]'
 tandem_group=tandem_east 
+mirror_list=true
+
+[bicycle_clients_east]
+bicycle-client1.lab.home.adrians.computer ansible_user=root bicycle_server=bicycle1.lab.home.adrians.computer 
+bicycle-client2.lab.home.adrians.computer ansible_user=root bicycle_server=bicycle2.lab.home.adrians.computer 
+
+[bicycle_clients_west:vars]
+repos='["rhel-7-server-rpms-2018-09-25", "rhel-7-server-extras-rpms-2018-09-25", "rhel-7-server-rh-common-rpms-2018-09-25"]'
+tandem_group=tandem_west 
 mirror_list=false
 
-[bicycle-clients]
-bicycle-client1.lab.home.adrians.computer ansible_user=root bicycle_server=bicycle1.lab.home.adrians.computer 
-bicycle-client2.lab.home.adrians.computer ansible_user=root bicycle_server=bicycle3.lab.home.adrians.computer 
-#bicycle-client2.lab.home.adrians.computer ansible_user=root tandem_group=tandem_east 
+[bicycle_clients_west]
+#bicycle-client3.lab.home.adrians.computer ansible_user=root bicycle_server=bicycle3.lab.home.adrians.computer 
+bicycle-client3.lab.home.adrians.computer ansible_user=root bicycle_server=bicycle3.lab.home.adrians.computer tandem_group=tandem_west 
 

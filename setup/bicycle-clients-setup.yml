@@ -1,4 +1,4 @@
-- hosts: bicycle-clients
+- hosts: bicycle_clients
   become: true
 
   roles:

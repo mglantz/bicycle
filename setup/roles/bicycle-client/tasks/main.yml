@@ -1,4 +1,14 @@
 ---
+  - name: clear /etc/yum.repos.d 
+    file: 
+      path: /etc/yum.repos.d
+      state: absent
+
+  - name: ensure /etc/yum.repos.d exists
+    file: 
+      path: /etc/yum.repos.d
+      state: directory
+
   - name: setup repo files
     get_url:
       url: http://{{ bicycle_server }}/repos/{{ item }}.repo

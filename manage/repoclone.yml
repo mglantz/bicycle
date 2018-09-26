@@ -1,4 +1,4 @@
-# Play to clone already synchronized repos, or to sync two local repos 
+# Play to clone already synchronized repos, or to copy local repos
 # Usage: ansible-playbook -i /path/to/bicycle-inventory ./repoclone.yml --extra-vars "bicycle=bicycle-ip from_repo=rhel-7-server-rpms to_repo=rhel7-180812"
 
 - hosts: bicycle_servers
@@ -11,8 +11,8 @@
       state: directory
       recurse: yes
 
-  - name: Synchronizing repository directory
-    shell: /usr/bin/rsync --delay-updates -F --compress --delete-after --archive /var/www/html/repos/{{ from_repo }}/ /var/www/html/repos/{{ to_repo }}
+  - name: Copy and hardlink repository directory
+    shell: /bin/cp -al /var/www/html/repos/{{ from_repo }}/ /var/www/html/repos/{{ to_repo }}
 
   - name: copy repo file 
     copy:

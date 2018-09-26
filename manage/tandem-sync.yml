@@ -1,4 +1,4 @@
-- hosts: bicycle-servers
+- hosts: bicycle_servers
   vars:
     vdo_disk: sdb
     vdo_disk_name: vdo1

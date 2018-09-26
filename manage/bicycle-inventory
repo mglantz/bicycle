@@ -25,7 +25,7 @@ bicycle-client1.lab.home.adrians.computer ansible_user=root bicycle_server=bicyc
 bicycle-client2.lab.home.adrians.computer ansible_user=root bicycle_server=bicycle2.lab.home.adrians.computer 
 
 [bicycle_clients_west:vars]
-repos='["rhel-7-server-rpms-2018-09-25", "rhel-7-server-extras-rpms-2018-09-25", "rhel-7-server-rh-common-rpms-2018-09-25"]'
+repos='["rhel-7-server-rpms-2018-09-26", "rhel-7-server-extras-rpms-2018-09-26", "rhel-7-server-rh-common-rpms-2018-09-26"]'
 tandem_group=tandem_west 
 mirror_list=false
 

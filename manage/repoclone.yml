@@ -5,14 +5,16 @@
   gather_facts: yes
   tasks:
 
-  - name: Ensure directory of destination repo exists
-    file:
-      path: /var/www/html/repos/{{ to_repo }}
-      state: directory
-      recurse: yes
+#  - name: Ensure directory of destination repo exists
+#    file:
+#      path: /var/www/html/repos/{{ to_repo }}
+#      state: directory
+#     recurse: yes
 
   - name: Copy and hardlink repository directory
-    shell: /bin/cp -al /var/www/html/repos/{{ from_repo }} /var/www/html/repos/{{ to_repo }}
+    shell: /bin/cp -al {{ from_repo }} {{ to_repo }}
+    args:
+      chdir: /var/www/html/repos/ 
 
   - name: copy repo file 
     copy:

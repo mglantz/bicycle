@@ -12,7 +12,7 @@
       recurse: yes
 
   - name: Copy and hardlink repository directory
-    shell: /bin/cp -al /var/www/html/repos/{{ from_repo }}/ /var/www/html/repos/{{ to_repo }}
+    shell: /bin/cp -al /var/www/html/repos/{{ from_repo }} /var/www/html/repos/{{ to_repo }}
 
   - name: copy repo file 
     copy:

@@ -9,15 +9,60 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="87.042091mm"
-   height="68.55291mm"
-   viewBox="0 0 87.042091 68.55291"
+   width="87.046249mm"
+   height="71.198746mm"
+   viewBox="0 0 87.046249 71.198746"
    version="1.1"
    id="svg2407"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="multi-server.svg">
   <defs
      id="defs2401">
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1407"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1405"
+         style="fill:#0000dc;fill-opacity:1;fill-rule:evenodd;stroke:#0000dc;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1081"
+         style="fill:#0000dc;fill-opacity:1;fill-rule:evenodd;stroke:#0000dc;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1317"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1075"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
     <marker
        inkscape:stockid="Arrow1Lend"
        orient="auto"
@@ -71,9 +116,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.4108305"
-     inkscape:cx="125.43089"
-     inkscape:cy="105.97626"
+     inkscape:zoom="1.8309527"
+     inkscape:cx="133.30471"
+     inkscape:cy="136.58122"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -102,10 +147,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-10.492062,-88.25432)">
+     transform="translate(-10.487903,-88.25432)">
     <g
        id="g6838"
-       transform="translate(-13.861804,9.1380583)">
+       transform="translate(-13.861804,11.783893)">
       <g
          style="opacity:1;fill:#000000;fill-opacity:0.99607843;stroke:#000400;stroke-opacity:0.99470903"
          transform="matrix(0.18900905,0,0,0.18900905,27.46315,122.83423)"
@@ -265,13 +310,13 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.17499995px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;opacity:1;fill:#323232;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="61.475986"
-       y="152.89934"
+       y="155.54514"
        id="text12016-5-6-71-0-4-9-3-9"
        inkscape:export-xdpi="180.07326"
        inkscape:export-ydpi="180.07326"><tspan
          sodipodi:role="line"
          x="61.475986"
-         y="152.89934"
+         y="155.54514"
          style="font-size:2.64583325px;line-height:1.25;fill:#323232;fill-opacity:1;stroke-width:0.26458332"
          id="tspan17828-7-4-29-7">Bicycle Clients</tspan></text>
     <g
@@ -510,13 +555,13 @@
       </g>
     </g>
     <rect
-       style="opacity:1;fill:none;stroke:#646464;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.8, 0.8;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:none;stroke:#646464;stroke-width:0.23318794;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.93275176, 0.93275176;stroke-dashoffset:0;stroke-opacity:1"
        id="rect6187-4-3-3"
-       width="62.413097"
-       height="9.5685816"
-       x="12.592062"
-       y="116.56797"
-       ry="1.087339" />
+       width="62.388226"
+       height="13.012862"
+       x="12.604497"
+       y="115.76796"
+       ry="1.4787347" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.17499995px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;opacity:1;fill:#323232;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -532,7 +577,7 @@
          id="tspan17828-7-4-29-3">Tandem Group</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow2Lstart);marker-end:url(#Arrow2Lend)"
-       d="m 32.91575,144.26718 10.275996,-16.27033 9.933466,16.52723"
+       d="m 32.91575,146.91303 10.275996,-16.27033 9.933466,16.52723"
        id="path5823"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
@@ -625,11 +670,50 @@
          x="53.772346"
          y="94.307152"
          style="font-size:2.64583325px;line-height:1.25;fill:#323232;fill-opacity:1;stroke-width:0.26458332"
-         id="tspan17828-7-4-29-3-18">Tandem Master</tspan></text>
+         id="tspan961">Red Hat CDN</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
-       d="M 42.911387,98.466238 V 114.59916"
+       d="M 42.911387,98.466238 28.822069,114.67141"
        id="path8795"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.06595206px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;opacity:1;fill:#323232;fill-opacity:1;stroke:none;stroke-width:0.17216265"
+       x="18.948675"
+       y="118.02251"
+       id="text12016-5-6-71-0-4-9-3-4-6-3"
+       inkscape:export-xdpi="180.07326"
+       inkscape:export-ydpi="180.07326"><tspan
+         sodipodi:role="line"
+         x="18.948675"
+         y="118.02251"
+         style="font-size:1.72162664px;line-height:1.25;fill:#323232;fill-opacity:1;stroke-width:0.17216265"
+         id="tspan17828-7-4-29-3-18-6">Tandem Master</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#0000dc;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
+       d="m 30.570638,125.08001 c 3.572665,3.42954 11.058705,1.00359 12.261726,0.25545"
+       id="path1037"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#0000dc;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1407)"
+       d="m 30.570638,125.08001 c 3.010669,4.45135 26.904269,0.88594 29.199758,0.076"
+       id="path1037-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.06595206px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;opacity:1;fill:#0000dc;fill-opacity:1;stroke:none;stroke-width:0.17216265"
+       x="54.12228"
+       y="127.82536"
+       id="text12016-5-6-71-0-4-9-3-4-6-3-5"
+       inkscape:export-xdpi="180.07326"
+       inkscape:export-ydpi="180.07326"><tspan
+         sodipodi:role="line"
+         x="54.12228"
+         y="127.82536"
+         style="font-size:1.72162676px;line-height:1.25;fill:#0000dc;fill-opacity:1;stroke-width:0.17216265"
+         id="tspan17828-7-4-29-3-18-6-3">Tandem Sync</tspan></text>
   </g>
 </svg>

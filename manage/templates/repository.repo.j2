@@ -1,3 +1,4 @@
 [{{repo}}]
-name={{repo}}
-baseurl=http://{{ inventory_hostname }}/repos/{{ repo }}
+name = {{repo}}
+baseurl = http://{{ inventory_hostname }}/repos/{{ repo }}
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release

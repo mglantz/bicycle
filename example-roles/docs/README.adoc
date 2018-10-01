@@ -12,7 +12,7 @@ Before we start we require 3 servers to be setup, just a default base OS install
 
 the other 2 will be the clients, they don't **need** to be registered to Red Hat - unless you want to take advantage of the Red Hat Insights etc. If you do subscribe them, be sure to disable all repos with 
 
- subscription-manager repo --disable="*"
+ subscription-manager repos --disable="*"
 
 image::images/single-server.svg[Single Server,pdfwidth=50%,role="right"]
 
@@ -95,7 +95,7 @@ As you can see, we are defining which bicycle server it should be configured for
 
  ansible-playbook [-i your_inventory] example-roles/bicycle-clients-setup.yml 
 
-And that's it, you can now log into your clients and do a *+yum list all** and you will see that they are working as expected, pulling their RPMs from the bicycle server
+And that's it, you can now log into your clients and do a **yum list all** and you will see that they are working as expected, pulling their RPMs from the bicycle server
 
 Adding additional clients is simply a matter of adding extra lines to the hosts file and re-running the playbook
 
@@ -139,7 +139,7 @@ Ok so we can see some changes to the hosts file
 
 === Setup the server group
 
-OK, before we go any further, we should sync the servers in the tandem group - but lest apply the settings to the servers first
+OK, before we go any further, we should sync the servers in the tandem group - but lets apply the settings to the servers first
 
 Run the bicycle-server setup 
 

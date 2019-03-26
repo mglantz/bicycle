@@ -16,6 +16,10 @@
       path: /var/www/html/repos
       state: directory
       recurse: yes
+      setype: httpd_sys_content_t
+      serole: object_r
+      seuser: system_u
+
 
   - name: run reposync for repository
     #command: /usr/bin/reposync --gpgcheck -l --repoid={{ repo }} --download_path=/var/www/html/repos/ --downloadcomps --download-metadata
@@ -37,4 +41,7 @@
       dest: "/var/www/html/repos/{{ repo }}.repo"
     tags: repo
 
+    
+  - name: ensure selinux file contexts
+    command: restorecon -R "/var/www/html/repos/{{ repo }}"
     

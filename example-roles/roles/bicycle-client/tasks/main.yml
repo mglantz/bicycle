@@ -1,0 +1,45 @@
+---
+  - name: clear /etc/yum.repos.d 
+    file: 
+      path: /etc/yum.repos.d
+      state: absent
+
+  - name: ensure /etc/yum.repos.d exists
+    file: 
+      path: /etc/yum.repos.d
+      state: directory
+
+  - name: setup repo files
+    get_url:
+      url: http://{{ bicycle_server }}/repos/{{ item }}.repo
+      dest: /etc/yum.repos.d/{{ item }}.repo
+    with_items:
+      - "{{ repos }}"
+
+  - name: create a mirror list per repo if mirror list is true
+    template:
+      src: ../manage/templates/mirrorlist.j2
+      dest: /etc/yum.repos.d/{{ item }}-mirrorlist
+      mode: 0644
+    with_items:
+      - "{{ repos }}"
+    when: mirror_list == "true"
+
+  - name: remove baseurl if mirror_list is true
+    lineinfile:
+      path: /etc/yum.repos.d/{{ item }}.repo
+      regexp: '^baseurl'
+      state: absent
+    with_items:
+      - "{{ repos }}"
+    when: mirror_list == "true"
+
+  - name: add mirrorlist line to repo if mirror_list is true
+    lineinfile:
+      path: /etc/yum.repos.d/{{ item }}.repo
+      state: present
+      line: "mirrorlist = file:///etc/yum.repos.d/{{ item }}-mirrorlist"
+    with_items:
+      - "{{ repos }}"
+    when: mirror_list == "true"
+

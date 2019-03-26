@@ -1,0 +1,60 @@
+---
+  - name: Install some basic packages before we start
+    yum: pkg={{item}} state=installed
+    with_items:
+     - httpd 
+     - httpd-tools
+     - createrepo
+     - yum-utils
+     - vdo
+     - kmod-kvdo
+     - rsync
+    tags: packages
+
+  - name: open port 80 on the firewall
+    firewalld:
+      service: http
+      permanent: true
+      state: enabled
+      immediate: yes
+    tags: firewall
+
+  # Create a VDO volume
+  - name: Create VDO volume 
+    vdo:
+      name: "{{ vdo_disk_name }}"
+      state: present
+      running: yes
+      activated: yes
+      device: "/dev/{{ vdo_disk }}"
+      logicalsize: "{{ vdo_logical_size }}"
+    tags: vdo
+
+  - name: format the VDO disk
+    filesystem:
+      fstype: xfs
+      dev: "/dev/mapper/{{ vdo_disk_name }}"
+
+  # mkdir repos directory
+  - name: Create repository directory
+    file:
+      path: "{{ repo_directory }}"
+      state: directory
+      mode: 0755
+
+  # mount the vdo disk
+  - name: mount the repo directory
+    mount:
+      path: "{{ repo_directory }}"
+      src: "/dev/mapper/{{ vdo_disk_name }}"
+      fstype: xfs
+      opts: defaults,x-systemd.requires=vdo.service
+      state: mounted
+
+  - name: ensure the webserver is enabled and satrted
+    systemd:
+      name: httpd
+      enabled: yes
+      state: started
+    tags: httpd
+

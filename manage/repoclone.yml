@@ -1,15 +1,32 @@
 # Play to clone already synchronized repos, or to copy local repos
 # Usage: ansible-playbook -i /path/to/bicycle-inventory ./repoclone.yml --extra-vars "bicycle=bicycle-ip from_repo=rhel-7-server-rpms to_repo=rhel7-180812"
 
-- hosts: all
-  gather_facts: no
+- hosts: bicycle_servers
+  gather_facts: yes
   tasks:
 
-  - name: Ensure directory of destination repo exists
-    file:
-      path: /var/www/html/repos/{{ to_repo }}
-      state: directory
-      recurse: yes
+#  - name: Ensure directory of destination repo exists
+#    file:
+#      path: /var/www/html/repos/{{ to_repo }}
+#      state: directory
+#     recurse: yes
 
   - name: Copy and hardlink repository directory
-    shell: /bin/cp -al /var/www/html/repos/{{ from_repo }}/ /var/www/html/repos/{{ to_repo }}
+    shell: /bin/cp -al {{ from_repo }} {{ to_repo }}
+    args:
+      chdir: /var/www/html/repos/ 
+
+  - name: copy repo file 
+    copy:
+      src: /var/www/html/repos/{{ from_repo }}.repo
+      dest: /var/www/html/repos/{{ to_repo }}.repo
+      remote_src: yes
+    tags: repo
+  
+  - name: update new repo file
+    replace:
+      path: /var/www/html/repos/{{ to_repo }}.repo
+      regexp: '{{ from_repo }}'
+      replace: '{{ to_repo }}'
+      backup: no
+    tags: repo

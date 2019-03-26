@@ -1,0 +1,6 @@
+- hosts: bicycle_clients
+  become: true
+
+  roles:
+     - bicycle-client
+
